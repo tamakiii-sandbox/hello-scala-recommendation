@@ -1,7 +1,6 @@
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Directives._
 import scala.io.StdIn
 
 object HelloWorldServer {
@@ -9,10 +8,7 @@ object HelloWorldServer {
     implicit val system = ActorSystem(Behaviors.empty, "HelloWorldSystem")
     implicit val executionContext = system.executionContext
 
-    val route =
-      pathEndOrSingleSlash {
-        complete("Hello, World!")
-      }
+    val route = Routes.helloWorldRoute
 
     val bindingFuture = Http().newServerAt("localhost", 8080).bind(route)
 
