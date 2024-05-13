@@ -9,6 +9,8 @@ lazy val root = project
       "com.typesafe.akka" %% "akka-http" % "10.5.3",
       "com.typesafe.akka" %% "akka-actor-typed" % "2.8.5",
       "com.typesafe.akka" %% "akka-stream" % "2.8.5",
-      "org.scalameta" %% "munit" % "0.7.29" % Test
+      "com.typesafe.akka" %% "akka-testkit" % "2.8.5" % Test,
+      "com.typesafe.akka" %% "akka-http-testkit" % "10.5.3" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.18" % Test,
     )
   )
